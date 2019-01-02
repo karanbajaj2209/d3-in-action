@@ -38,10 +38,20 @@
           .style("opacity", 0)
           .text("Uh, hi.");
 
+      // Transition and delay
       d3.select("#a").transition().delay(1000).style("opacity", 1);
-      d3.select("#b").transition().delay(3000).style("opacity", .75);
+      
+      // Add the blinking functionalty
+      
+      setInterval(function(){
+        d3.select("#b").style("opacity", Math.random());
+      }, 500)
 
-      d3.selectAll("circle").transition().duration(2000).attr("cy", 200);
+      // Transition and duration
+      d3.selectAll("circle")
+        .transition()
+        .duration(2000)
+        .attr("cy", 200);
 
     </script>
   </body>
